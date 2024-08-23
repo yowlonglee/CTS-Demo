@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost:8889';
-$dbuser ='root';
-$dbpassword = 'root';
-$dbname = 'demo';
+// $host = 'cts-demo-cts-demo.h.aivencloud.com';
+// $dbuser ='root';
+// $dbpassword = 'root';
+// $dbname = 'demo';
 
 // 建立連線
 $conn = new mysqli($host, $dbuser, $dbpassword, $dbname);

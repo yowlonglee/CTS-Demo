@@ -5,6 +5,7 @@
   "routes": [
     { "src": "/images/(.*)", "dest": "images" },
     { "src": "/app.js", "dest": "app.js" },
+    { "src": "/config.php", "dest": "/api/config.php" },
     { "src": "/(.*)", "dest": "/api/index.php" }
   ]
 }
