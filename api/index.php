@@ -1,7 +1,8 @@
 <?php
   require_once 'config.php';
-  $sql = "SELECT * FROM news ORDER BY datetime DESC";
-  $result = $conn->query($sql);
+  echo $result->rowCount();
+  // $sql = "SELECT * FROM news ORDER BY datetime DESC";
+  // $result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
 <html>
@@ -56,7 +57,7 @@
       <div class="container">
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
           <?php
-            if ($result->num_rows > 0) {
+            if ($result->rowCount() > 0) {
               // output data of each row
               while($row = $result->fetch_assoc()) {
           ?>
