@@ -86,7 +86,6 @@
             } else {
               echo "沒有資料 !";
             }
-            $conn->close();
           ?>      
         </div>
       </div>
