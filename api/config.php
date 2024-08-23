@@ -1,11 +1,22 @@
 <?php
-// $host = 'cts-demo-cts-demo.h.aivencloud.com';
-// $dbuser ='root';
-// $dbpassword = 'root';
-// $dbname = 'demo';
-
+echo $_ENV["dbuser"];
+$uri = "mysql://avnadmin:" + $_ENV["dbpassword"] + "@news-cts-demo.h.aivencloud.com:25552/defaultdb?ssl-mode=REQUIRED";
+$fields = parse_url($uri);
 // 建立連線
-$conn = new mysqli($_ENV["host"], $_ENV["dbuser"], $_ENV["dbpassword"], $_ENV["dbname"]);
+// $conn = new mysqli($_ENV["host"], $_ENV["dbuser"], , $_ENV["dbname"]);
+$conn = "mysql:";
+$conn .= "host=" . $fields["host"];
+$conn .= ";port=" . $fields["port"];;
+$conn .= ";dbname=defaultdb";
+$conn .= ";sslmode=verify-ca;sslrootcert='ca.pem'";
 // 檢查連線
-if ($conn->connect_error) { die("連接失敗 : " . $conn->connect_error); }
+// if ($conn->connect_error) { die("連接失敗 : " . $conn->connect_error); }
+try {
+    $db = new PDO($conn, $fields["user"], $fields["pass"]);
+
+    $stmt = $db->query("SELECT VERSION()");
+    print($stmt->fetch()[0]);
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+}
 ?>
