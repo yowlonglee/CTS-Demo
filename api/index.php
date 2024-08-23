@@ -19,17 +19,17 @@
       }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script defer src="./app.js"></script>
+  <script defer src="/api/app.js"></script>
   </head>
   <body>
     <div class="container-fluid">
 
       <div class="row">
         <div class="d-md-none">
-          <img src="./images/650x340_fb.jpg" alt="川金會banner" class="img-fluid">
+          <img src="/api/images/650x340_fb.jpg" alt="川金會banner" class="img-fluid">
         </div>
         <div class="d-none d-md-block">
-          <img src="./images/topimg.jpg" alt="川金會banner" class="img-fluid d-block mx-auto">
+          <img src="/api/images/topimg.jpg" alt="川金會banner" class="img-fluid d-block mx-auto">
         </div>
       </div>
 
