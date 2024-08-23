@@ -1,5 +1,4 @@
 <?php
-  phpinfo();
   // require_once 'config.php';
   // $sql = "SELECT * FROM news ORDER BY datetime DESC";
   // $result = $conn->query($sql);
@@ -13,24 +12,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
       .fetch-news_btn {
-        background-image: url(images/more.jpg);
+        background-image: url(./images/more.jpg);
         width: 266px;
         height: 35px;
         font-size: 0;
       }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script defer src="app.js"></script>
+  <script defer src="./app.js"></script>
   </head>
   <body>
     <div class="container-fluid">
 
       <div class="row">
         <div class="d-md-none">
-          <img src="images/650x340_fb.jpg" alt="川金會banner" class="img-fluid">
+          <img src="./images/650x340_fb.jpg" alt="川金會banner" class="img-fluid">
         </div>
         <div class="d-none d-md-block">
-          <img src="images/topimg.jpg" alt="川金會banner" class="img-fluid d-block mx-auto">
+          <img src="./images/topimg.jpg" alt="川金會banner" class="img-fluid d-block mx-auto">
         </div>
       </div>
 
@@ -56,7 +55,39 @@
 
       <div class="container">
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
-             
+          <?php
+            if ($result->num_rows > 0) {
+              // output data of each row
+              while($row = $result->fetch_assoc()) {
+          ?>
+            <div class="col mb-3">
+              <div class="card text-center">
+                <img 
+                  src="<?php echo $row["img"]; ?>" 
+                  class="card-img-top" 
+                  alt="<?php echo $row["title"]; ?>" 
+                />
+                <div class="card-body">
+                  <a 
+                  class="card-title link-primary link-underline link-underline-opacity-0" 
+                  href="<?php echo $row["link"]; ?>"
+                  >
+                    <?php echo $row["title"]; ?>
+                  </a>
+                  <p class="card-text"><small class="text-body-secondary"><?php echo $row["datetime"]; ?></small></p>
+                </div>
+              </div>
+  
+            </div>
+          <?php      
+            }
+          ?>
+          <?php
+            } else {
+              echo "沒有資料 !";
+            }
+            $conn->close();
+          ?>      
           </div>
       </div>
 
