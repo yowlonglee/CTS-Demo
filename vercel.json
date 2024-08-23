@@ -2,5 +2,9 @@
   "functions": {
     "api/*.php": { "runtime": "vercel-php@0.7.1" }
   },
-  "routes": [{ "src": "/index.php", "dest": "/api/index.php" }]
+  "routes": [
+    { "src": "/images", "dest": "/api/images" },
+    { "src": "/app.js", "dest": "/api/app.js" },
+    { "src": "/(.*)", "dest": "/api/index.php" }
+  ]
 }
