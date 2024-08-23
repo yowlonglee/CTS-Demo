@@ -14,7 +14,6 @@ try {
     $db = new PDO($conn, $fields["user"], $fields["pass"]);
 
     $result = $db->query("SELECT * FROM news ORDER BY datetime DESC");
-    echo $result;
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
 }
