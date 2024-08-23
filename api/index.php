@@ -1,8 +1,3 @@
-<?php
-  // require_once 'config.php';
-  // $sql = "SELECT * FROM news ORDER BY datetime DESC";
-  // $result = $conn->query($sql);
-?>
 <!doctype html>
 <html>
   <head>
@@ -52,44 +47,6 @@
       </div>
       
       <div class="row text-bg-primary py-1 my-2 justify-content-center">川金會相關新聞</div>
-
-      <div class="container">
-        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
-          <?php
-            if ($result->num_rows > 0) {
-              // output data of each row
-              while($row = $result->fetch_assoc()) {
-          ?>
-            <div class="col mb-3">
-              <div class="card text-center">
-                <img 
-                  src="<?php echo $row["img"]; ?>" 
-                  class="card-img-top" 
-                  alt="<?php echo $row["title"]; ?>" 
-                />
-                <div class="card-body">
-                  <a 
-                  class="card-title link-primary link-underline link-underline-opacity-0" 
-                  href="<?php echo $row["link"]; ?>"
-                  >
-                    <?php echo $row["title"]; ?>
-                  </a>
-                  <p class="card-text"><small class="text-body-secondary"><?php echo $row["datetime"]; ?></small></p>
-                </div>
-              </div>
-  
-            </div>
-          <?php      
-            }
-          ?>
-          <?php
-            } else {
-              echo "沒有資料 !";
-            }
-            $conn->close();
-          ?>      
-          </div>
-      </div>
 
       <div class="row justify-content-center my-5">
         <button class="fetch-news_btn">MORE</button>
