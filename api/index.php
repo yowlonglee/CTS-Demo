@@ -26,10 +26,10 @@
 
       <div class="row">
         <div class="d-md-none">
-          <img src="/api/images/650x340_fb.jpg" alt="川金會banner" class="img-fluid">
+          <img src="/images/650x340_fb.jpg" alt="川金會banner" class="img-fluid">
         </div>
         <div class="d-none d-md-block">
-          <img src="/api/images/topimg.jpg" alt="川金會banner" class="img-fluid d-block mx-auto">
+          <img src="images/topimg.jpg" alt="川金會banner" class="img-fluid d-block mx-auto">
         </div>
       </div>
 
