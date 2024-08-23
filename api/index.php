@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>川金會特別報導</title>
@@ -47,6 +47,8 @@
       </div>
       
       <div class="row text-bg-primary py-1 my-2 justify-content-center">川金會相關新聞</div>
+
+      
 
       <div class="row justify-content-center my-5">
         <button class="fetch-news_btn">MORE</button>
