@@ -1,6 +1,5 @@
 <?php
   require_once 'config.php';
-  echo $result->rowCount();
   // $sql = "SELECT * FROM news ORDER BY datetime DESC";
   // $result = $conn->query($sql);
 ?>
@@ -59,7 +58,7 @@
           <?php
             if ($result->rowCount() > 0) {
               // output data of each row
-              while($row = $result->fetch_assoc()) {
+              while($row = $result->fetch()) {
           ?>
             <div class="col mb-3">
               <div class="card text-center">
