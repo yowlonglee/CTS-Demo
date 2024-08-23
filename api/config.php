@@ -13,7 +13,7 @@ $conn .= ";sslmode=verify-ca;sslrootcert='ca.pem'";
 try {
     $db = new PDO($conn, $fields["user"], $fields["pass"]);
 
-    $results = $db->query("SELECT * FROM news ORDER BY datetime DESC");
+    $result = $db->query("SELECT * FROM news ORDER BY datetime DESC");
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
 }
