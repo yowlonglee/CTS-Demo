@@ -1,6 +1,7 @@
 <?php
-echo $_ENV["dbuser"];
-$uri = "mysql://avnadmin:" + $_ENV["dbpassword"] + "@news-cts-demo.h.aivencloud.com:25552/defaultdb?ssl-mode=REQUIRED";
+$user = getenv('dbuser');
+echo $user;
+$uri = "mysql://avnadmin:" . getenv('dbpassword') . "@news-cts-demo.h.aivencloud.com:25552/defaultdb?ssl-mode=REQUIRED";
 $fields = parse_url($uri);
 // 建立連線
 // $conn = new mysqli($_ENV["host"], $_ENV["dbuser"], , $_ENV["dbname"]);
