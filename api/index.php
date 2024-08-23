@@ -1,7 +1,7 @@
 <?php
   require_once 'config.php';
-  //$sql = "SELECT * FROM news ORDER BY datetime DESC";
-  //$result = $conn->query($sql);
+  $sql = "SELECT * FROM news ORDER BY datetime DESC";
+  $result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
 <html>
